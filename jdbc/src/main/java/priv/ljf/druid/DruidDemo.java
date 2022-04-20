@@ -1,4 +1,4 @@
-package priv.ljf.jdbc;
+package priv.ljf.druid;
 /**
  * Druid数据库连接池演示
  */
