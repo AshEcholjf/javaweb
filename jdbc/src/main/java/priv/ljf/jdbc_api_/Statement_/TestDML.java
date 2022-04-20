@@ -1,4 +1,4 @@
-package priv.ljf.jdbc_.Statement_;
+package priv.ljf.jdbc_api_.Statement_;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

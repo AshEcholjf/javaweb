@@ -1,4 +1,4 @@
-package priv.ljf.jdbc_.ResultSet_;
+package priv.ljf.jdbc_api_.ResultSet_;
 //案例
 //需求：查询account账户表数据，封装为Account对象中，并且存储到ArrayList集合中
 

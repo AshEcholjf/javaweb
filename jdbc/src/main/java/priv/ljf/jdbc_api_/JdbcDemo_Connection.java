@@ -1,4 +1,4 @@
-package priv.ljf.jdbc_;
+package priv.ljf.jdbc_api_;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,6 +8,7 @@ import java.sql.Statement;
 /**
  * JDBC API 详解：Connection
  */
+@SuppressWarnings({"all"})
 public class JdbcDemo_Connection {
     public static void main(String[] args) throws Exception {
         //1.注册驱动,默认执行
