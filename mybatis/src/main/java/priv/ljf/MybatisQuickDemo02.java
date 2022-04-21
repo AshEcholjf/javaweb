@@ -1,10 +1,11 @@
-package priv.ljf.pojo;
+package priv.ljf;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import priv.ljf.mapper.UserMapper;
+import priv.ljf.pojo.User;
 
 import java.io.InputStream;
 import java.util.List;

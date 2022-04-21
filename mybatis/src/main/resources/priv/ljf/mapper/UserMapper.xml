@@ -6,7 +6,9 @@
 <!--
     namespace:命名空间
 -->
+<!--Statement-->
 <mapper namespace="priv.ljf.mapper.UserMapper">
+
     <select id="selectAll" resultType="User">
         select * from tb_user;
     </select>
