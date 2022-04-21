@@ -17,6 +17,8 @@
     </environments>
     <mappers>
         <!--        加载sql映射文件-->
-        <mapper resource="UserMapper.xml"/>
+<!--        <mapper resource="priv/ljf/mapper/UserMapper.xml"/>-->
+<!--            Mapper代理方式-->
+        <package name="priv.ljf.mapper"/>
     </mappers>
 </configuration>
