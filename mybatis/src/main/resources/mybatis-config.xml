@@ -3,7 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+<!--    别名设置-->
+<!--    <typeAliases>-->
+<!--        <package name="priv.ljf.pojo"/>-->
+<!--    </typeAliases>-->
     <environments default="development">
+        <!--    environments：配置数据库连接环境信息，可以配置多个environment，通过default切换不同的environment
+        选择数据源(数据库),如果存在多个数据源，test等，修改default切换即可
+        -->
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
@@ -17,8 +24,8 @@
     </environments>
     <mappers>
         <!--        加载sql映射文件-->
-<!--        <mapper resource="priv/ljf/mapper/UserMapper.xml"/>-->
-<!--            Mapper代理方式-->
+        <!--        <mapper resource="priv/ljf/mapper/UserMapper.xml"/>-->
+        <!--            Mapper代理方式-->
         <package name="priv.ljf.mapper"/>
     </mappers>
 </configuration>
