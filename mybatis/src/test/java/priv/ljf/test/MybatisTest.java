@@ -94,4 +94,34 @@ public class MybatisTest {
         sqlSession.close();
 
     }
+@Test
+    public void testByConditionSingle()throws Exception{
+        //接受用户输入的参数
+        int status = 1;
+        String companyName = "华为";
+        String brandName = "华为";
+
+        //对参数进行处理
+        companyName = "%" + companyName + "%";
+        brandName = "%" + brandName + "%";
+
+        Brand brand = new Brand();
+//        brand.setBrandName(brandName);
+//        brand.setCompanyName(companyName);
+//        brand.setStatus(status);
+
+        //1.获取sqlSessionFactory对象加载mybatis配置文件
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        //2.获取sqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        //3.获取Mapper接口代理对象，用来做执行对应的sql方法
+        BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
+        //4.执行sql语句
+        List<Brand> brands = mapper.selectByConditionSingle(brand);
+        System.out.println(brands);
+        //5.释放资源
+        sqlSession.close();
+    }
 }

@@ -119,5 +119,37 @@
         </where>
 
     </select>
+    <select id="selectByConditionSingle" resultMap="brandResultMap">
+        select *
+        from tb_brand
+        <!--        where-->
+        <!--        <choose>&lt;!&ndash;相当于switch&ndash;&gt;-->
+        <!--            <when test="status != null">-->
+        <!--                and status = #{status}-->
+        <!--            </when>-->
+        <!--            <when test="companyName != null and companyName != ''">-->
+        <!--                and company_name like #{companyName}-->
+        <!--            </when>-->
+        <!--            <when test="brandName != null and brandName != ''">-->
+        <!--                and brand_name like #{brandName}-->
+        <!--            </when>-->
+        <!--            <otherwise>-->
+        <!--                1 == 1-->
+        <!--            </otherwise>-->
+        <!--        </choose>-->
+        <where>
+            <choose><!--相当于switch-->
+                <when test="status != null">
+                    and status = #{status}
+                </when>
+                <when test="companyName != null and companyName != ''">
+                    and company_name like #{companyName}
+                </when>
+                <when test="brandName != null and brandName != ''">
+                    and brand_name like #{brandName}
+                </when>
+            </choose>
+        </where>
+    </select>
 
 </mapper>

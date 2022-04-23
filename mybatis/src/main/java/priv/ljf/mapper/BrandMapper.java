@@ -30,6 +30,6 @@ public interface BrandMapper {
     //该方式要求在映射配置文件的SQL中使用 `#{内容}` 时，里面的内容必须和map集合中键的名称一致。以便sql语句根据键找到对应的值
 //    List<Brand> selectByCondition(Map map);
 
-
+List<Brand> selectByConditionSingle(Brand brand);
 
 }
