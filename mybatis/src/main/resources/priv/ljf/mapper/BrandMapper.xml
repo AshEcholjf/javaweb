@@ -83,4 +83,14 @@
          ]]>
          #{id};
     </select>
+
+
+    <select id="selectByCondition" resultMap="brandResultMap">
+        select *
+        from tb_brand
+        where status = #{status}
+          and brand_name like #{brandName}
+          and company_name like #{companyName};
+
+    </select>
 </mapper>
