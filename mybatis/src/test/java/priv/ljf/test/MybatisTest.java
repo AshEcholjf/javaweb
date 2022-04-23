@@ -13,10 +13,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@SuppressWarnings({"all"})
 public class MybatisTest {
 
+
     @Test
-    public void testSelectAll()throws Exception{
+    public void testSelectAll() throws Exception {
         //1.获取SqlSessionFactory
         String resource = "mybatis-config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
@@ -32,8 +34,9 @@ public class MybatisTest {
         //5.释放资源
         sqlSession.close();
     }
+
     @Test
-    public void testById()throws Exception{
+    public void testById() throws Exception {
         //接受页面传入的id参数
         int id = 1;
         //1.获取SqlSessionFactory对象，加载Mybatis配置文件
@@ -54,7 +57,7 @@ public class MybatisTest {
 
     //条件查询测试
     @Test
-    public void testByCondition()throws Exception{
+    public void testByCondition() throws Exception {
         //接受用户输入的参数
         int status = 1;
         String companyName = "华为";
@@ -83,7 +86,7 @@ public class MybatisTest {
         //方式二 ：接口方法参数是 实体类对象 方式调用的方法
         List<Brand> brands = mapper.selectByCondition(brand);
 
-         //方式三 ：接口方法参数是 map集合对象 方式调用的方法
+        //方式三 ：接口方法参数是 map集合对象 方式调用的方法
 //        Map<Object, Object> map = new HashMap<>();
 //        map.put("status",status);
 //        map.put("companyName",companyName);
@@ -94,8 +97,9 @@ public class MybatisTest {
         sqlSession.close();
 
     }
-@Test
-    public void testByConditionSingle()throws Exception{
+
+    @Test
+    public void testByConditionSingle() throws Exception {
         //接受用户输入的参数
         int status = 1;
         String companyName = "华为";
@@ -124,4 +128,38 @@ public class MybatisTest {
         //5.释放资源
         sqlSession.close();
     }
+
+    @Test
+    public void testAdd() throws Exception {
+        //接收参数
+        int status = 1;
+        String companyName = "波导手机";
+        String brandName = "波导";
+        String description = "手机中的战斗机";
+        int ordered = 100;
+
+        //封装对象
+        Brand brand = new Brand();
+        brand.setStatus(status);
+        brand.setBrandName(brandName);
+        brand.setCompanyName(companyName);
+        brand.setDescription(description);
+        brand.setOrdered(ordered);
+        //1.获取sqlSessionFactory对象加载mybatis配置文件
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        //2.获取sqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+        //SqlSession sqlSession = sqlSessionFactory.openSession(true); //设置自动提交事务，这种情况不需要手动提交事务了
+        BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
+        //4. 执行方法
+        mapper.add(brand);
+        //提交事务
+//        sqlSession.commit();
+        //5. 释放资源
+        sqlSession.close();
+
+    }
+
 }

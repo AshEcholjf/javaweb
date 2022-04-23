@@ -49,6 +49,8 @@
         <result column="company_name" property="companyName"/>
 
     </resultMap>
+
+
     <select id="selectAll" resultMap="brandResultMap">
         select *
         from tb_brand;
@@ -151,5 +153,8 @@
             </choose>
         </where>
     </select>
-
+    <insert id="add">
+        insert into tb_brand (brand_name, company_name, ordered, description, status)
+        values (#{brandName},#{companyName},#{ordered},#{description},#{status});
+    </insert>
 </mapper>
