@@ -65,9 +65,9 @@ public class MybatisTest {
         brandName = "%" + brandName + "%";
 
         Brand brand = new Brand();
-        brand.setBrandName(brandName);
-        brand.setCompanyName(companyName);
-        brand.setStatus(status);
+//        brand.setBrandName(brandName);
+//        brand.setCompanyName(companyName);
+//        brand.setStatus(status);
 
         //1.获取sqlSessionFactory对象加载mybatis配置文件
         String resource = "mybatis-config.xml";
@@ -81,14 +81,14 @@ public class MybatisTest {
         //方式一 ：接口方法参数使用 @Param 方式调用的方法
 //        List<Brand> brands = mapper.selectByCondition(status, companyName, brandName);
         //方式二 ：接口方法参数是 实体类对象 方式调用的方法
-//        List<Brand> brands = mapper.selectByCondition(brand);
+        List<Brand> brands = mapper.selectByCondition(brand);
 
          //方式三 ：接口方法参数是 map集合对象 方式调用的方法
-        Map<Object, Object> map = new HashMap<>();
-        map.put("status",status);
-        map.put("companyName",companyName);
-        map.put("brandName",brandName);
-        List<Brand> brands = mapper.selectByCondition(map);
+//        Map<Object, Object> map = new HashMap<>();
+//        map.put("status",status);
+//        map.put("companyName",companyName);
+//        map.put("brandName",brandName);
+//        List<Brand> brands = mapper.selectByCondition(map);
         System.out.println(brands);
         //5.释放资源
         sqlSession.close();

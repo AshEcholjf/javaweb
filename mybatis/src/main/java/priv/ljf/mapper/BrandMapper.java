@@ -26,9 +26,9 @@ public interface BrandMapper {
 //    使用 `@Param("参数名称")` 标记每一个参数，在测试中调用对应的方法，传入参数，sql语句会根据@param标记的名称一一对应
 //    List<Brand> selectByCondition(@Param("status")int status,@Param("companyName") String companyName,@Param("brandName") String brandName);
     //该方式要求在映射配置文件的SQL中使用 `#{内容}` 时，里面的内容必须和实体类属性名保持一致。这样在执行sql语句时才能根据占位符里的参数找到对象中对应的参数
-//    List<Brand> selectByCondition(Brand brand);
+    List<Brand> selectByCondition(Brand brand);
     //该方式要求在映射配置文件的SQL中使用 `#{内容}` 时，里面的内容必须和map集合中键的名称一致。以便sql语句根据键找到对应的值
-    List<Brand> selectByCondition(Map map);
+//    List<Brand> selectByCondition(Map map);
 
 
 

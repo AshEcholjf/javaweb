@@ -85,12 +85,39 @@
     </select>
 
 
+    <!--    <select id="selectByCondition" resultMap="brandResultMap">-->
+    <!--        select *-->
+    <!--        from tb_brand-->
+    <!--        where status = #{status}-->
+    <!--          and brand_name like #{brandName}-->
+    <!--          and company_name like #{companyName};-->
+
+    <!--    </select>-->
+
+    <!--
+        动态条件查询：
+            *if：条件判断
+                *test：逻辑表达式
+            *问题：
+                *恒等式：
+                *<where>替换where关键字，如果where内部没有内容，则不会出现where，如果有内容，会优化内部and
+    -->
     <select id="selectByCondition" resultMap="brandResultMap">
         select *
         from tb_brand
-        where status = #{status}
-          and brand_name like #{brandName}
-          and company_name like #{companyName};
+        <where>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+            <if test="companyName != null and companyName != ''">
+                and company_name like #{companyName}
+            </if>
+            <if test="brandName != null and brandName != ''">
+                and brand_name like #{brandName}
+            </if>
+
+        </where>
 
     </select>
+
 </mapper>
