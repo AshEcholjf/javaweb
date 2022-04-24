@@ -49,6 +49,11 @@
         <result column="company_name" property="companyName"/>
 
     </resultMap>
+    <delete id="delete">
+        delete
+        from tb_brand
+        where id = #{id};
+    </delete>
 
 
     <select id="selectAll" resultMap="brandResultMap">

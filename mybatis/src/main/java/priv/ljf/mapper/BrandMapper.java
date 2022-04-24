@@ -47,4 +47,5 @@ public interface BrandMapper {
     /**
      * 根据id删除
      */
+    void delete(int id);
 }

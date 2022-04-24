@@ -223,7 +223,24 @@ public class MybatisTest {
         mapper.update(brand);
         sqlSession.commit();
         sqlSession.close();
+    }
 
+    @Test
+    public void testDelete()throws Exception{
+        //接收参数
+        int id = 6;
+        //1. 获取SqlSessionFactory
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        //2. 获取SqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+        //3. 获取Mapper接口的代理对象
+        BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
+        //4. 执行方法
+        mapper.delete(id);
+        //5. 释放资源
+        sqlSession.close();
 
     }
 
