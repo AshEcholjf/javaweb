@@ -37,4 +37,6 @@ public interface BrandMapper {
      * 添加
      */
     void add(Brand brand);
+
+    void addOrder(Brand brand);
 }

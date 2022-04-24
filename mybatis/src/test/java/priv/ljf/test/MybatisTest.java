@@ -152,6 +152,7 @@ public class MybatisTest {
         //2.获取sqlSession对象
         SqlSession sqlSession = sqlSessionFactory.openSession(true);
         //SqlSession sqlSession = sqlSessionFactory.openSession(true); //设置自动提交事务，这种情况不需要手动提交事务了
+        //3.获取Mapper接口代理对象，用来做执行对应的sql方法
         BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
         //4. 执行方法
         mapper.add(brand);
@@ -161,5 +162,37 @@ public class MybatisTest {
         sqlSession.close();
 
     }
+
+    @Test
+    public void testAddOrder()throws Exception {
+        //接收参数
+        int status = 1;
+        String companyName = "波导手机";
+        String brandName = "波导";
+        String description = "手机中的战斗机";
+        int ordered = 100;
+
+        //封装对象
+        Brand brand = new Brand();
+        brand.setStatus(status);
+        brand.setBrandName(brandName);
+        brand.setCompanyName(companyName);
+        brand.setDescription(description);
+        brand.setOrdered(ordered);
+        //1.获取sqlSessionFactory对象加载mybatis配置文件
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+
+        //2.获取sqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+        //3.获取Mapper接口代理对象，用来做执行对应的sql方法
+        BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
+        mapper.addOrder(brand);
+        System.out.println(brand.getId());
+        //5. 释放资源
+        sqlSession.close();
+    }
+
 
 }
