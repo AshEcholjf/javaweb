@@ -8,6 +8,7 @@ import org.junit.Test;
 import priv.ljf.mapper.BrandMapper;
 import priv.ljf.pojo.Brand;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
@@ -164,7 +165,7 @@ public class MybatisTest {
     }
 
     @Test
-    public void testAddOrder()throws Exception {
+    public void testAddOrder() throws Exception {
         //接收参数
         int status = 1;
         String companyName = "波导手机";
@@ -192,6 +193,38 @@ public class MybatisTest {
         System.out.println(brand.getId());
         //5. 释放资源
         sqlSession.close();
+    }
+
+    @Test
+    public void testUpdate() throws IOException {
+        //接收参数
+        int status = 0;
+        String companyName = "波导手机";
+        String brandName = "波导";
+        String description = "波导手机,手机中的战斗机";
+        int ordered = 200;
+        int id = 6;
+        //封装对象
+        Brand brand = new Brand();
+        brand.setStatus(status);
+        //        brand.setCompanyName(companyName);
+        //        brand.setBrandName(brandName);
+        //        brand.setDescription(description);
+        //        brand.setOrdered(ordered);
+        brand.setId(id);
+        //1. 获取SqlSessionFactory
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        //2. 获取SqlSession对象
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        BrandMapper mapper = sqlSession.getMapper(BrandMapper.class);
+
+        mapper.update(brand);
+        sqlSession.commit();
+        sqlSession.close();
+
+
     }
 
 

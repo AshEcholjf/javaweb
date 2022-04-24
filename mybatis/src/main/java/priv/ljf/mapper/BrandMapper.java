@@ -39,4 +39,12 @@ public interface BrandMapper {
     void add(Brand brand);
 
     void addOrder(Brand brand);
+    /**
+     * 修改
+     */
+    void update(Brand brand);
+
+    /**
+     * 根据id删除
+     */
 }
