@@ -48,4 +48,12 @@ public interface BrandMapper {
      * 根据id删除
      */
     void delete(int id);
+    /**
+     * 批量删除有
+     */
+//    mybatis会将数组参数，封装为一个Map集合。
+//
+//* 默认：array = 数组
+//* 使用@Param注解改变map集合的默认key的名称
+    void deleteById( int[] ids);
 }
