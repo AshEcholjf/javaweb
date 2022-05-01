@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    //函数定义有两种方式
+
+    //1.function 函数名(参数1,参数2..){
+    // 要执行的代码
+    // }
+
+    function add1(a,b){
+        return a + b;
+    }
+    //由于定义变量用var，所以这里参数可以直接shenglue类型，同样返回值也不需要规定var
+
+    //2.定义一个变量，这个变量是函数
+    // var 函数名 = function (参数列表){
+    // 要执行的代码
+    // }
+    var add2 = function (a,b){
+        return a + b;
+    }
+
+
+    //函数调用
+    // var a = add1(1,2);
+    // alert(a);
+    // var b = add2(2,3);
+    // alert(b);
+
+
+    var c = add1(1,2,3,4,5,6);
+    alert(c)//只会接受前两个
+
+    var d = add2(1);
+    alert(d);//NaN，b是NaN，所以结果也是NaN
+
+</script>
+</body>
+</html>
