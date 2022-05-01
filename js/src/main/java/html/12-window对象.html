@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //window 对象是 JavaScript 对浏览器的窗口进行封装的对象。当前浏览的这个网页
+
+    //获取window对象
+    //该对象不需要创建直接使用 window，其中 window.  可以省略。
+    //比如我们之前使用的 alert() 函数，其实就是 window 对象的函数
+    //内置对象
+    // window.alert("window");
+    // alert("window!");
+
+
+    //window对象属性
+    //`window` 对象提供了用于获取其他 BOM 组成对象的属性
+    // window.history
+    // window.location
+    // window.screen
+    // window.navigator
+
+    // window对象函数
+    // confirm()，点击确定按钮，返回true，点击取消按钮，返回false
+    // var b = window.confirm("确定删除?");
+    // if (b){
+    // alert("确定删除");
+    // }else {
+    //     alert("不删除");
+    // }
+
+    function f1() {
+        alert("我是一个函数");
+    }
+
+    //`setTimeout(function,毫秒值)` : 在一定的时间间隔后执行一个function，只执行一次
+    // setTimeout(function () {
+    //     alert("我只执行一次");
+    // }, 4000);
+    setTimeout(f1, 3000);
+
+    //    `setInterval(function,毫秒值)` :在一定的时间间隔后执行一个function，循环执行
+    setInterval(f1, 1000);
+
+
+</script>
+</body>
+</html>
