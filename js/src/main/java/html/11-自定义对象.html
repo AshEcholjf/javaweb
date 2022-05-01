@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*在 JavaScript 中自定义对象特别简单，下面就是自定义对象的格式：
+        var 对象名称 = {
+            属性名称1:属性值1,
+            属性名称2:属性值2,
+            ...,
+            函数名称:function (形参列表){},
+            ...
+        };
+*/
+
+
+    var person = {
+        //属性和方法以键值对的形式存在
+        name : "张三",
+        age : 20,
+        show :function () {
+            alert("我的名字是" + name + ",今年" + this.age + "岁了");
+            //这里访问age需要加this,否则无法访问
+        }
+    }
+
+    // alert(person.name);
+    // alert(person.age);
+    person.show();
+</script>
+</body>
+</html>
