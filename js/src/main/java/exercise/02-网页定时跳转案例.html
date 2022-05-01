@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跳转</title>
+</head>
+<body>
+
+<script>
+    document.write("该网页将在3秒后跳转到百度~~~");
+
+    document.write("倒计时");
+    var count = 1;
+    setInterval(function (){
+        document.write(count++ + "~");
+    },1000)
+
+    setTimeout(function (){
+        location.href = "https://www.baidu.com";
+    },3001);
+
+</script>
+</body>
+</html>
