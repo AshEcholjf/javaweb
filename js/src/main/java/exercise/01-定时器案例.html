@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自动开关灯</title>
+</head>
+<body>
+
+    <input type="button" value="开灯" onclick="on()">
+    <img id="myImage" border="0" src = "../imgs/off.gif" style="text-align: center">
+    <input type="button" value="关灯" onclick="off()">
+
+
+<script>
+    function on(){
+        document.getElementById('myImage').src='../imgs/on.gif';
+    }
+    function off(){
+        document.getElementById('myImage').src='../imgs/off.gif';
+    }
+     //定义一个变量，用来记录灯的状态，偶数是开灯状态，奇数是关灯状态
+    var flag = 0;
+    setInterval(
+        function (){
+            if (flag % 2 === 0){//表示是偶数，开灯状态，调用 on() 函数
+                on();
+            }else {//表示是奇数，关灯状态，调用 off() 函数
+                off();
+            }
+            flag++;
+        },1000
+    )
+</script>
+</body>
+</html>
