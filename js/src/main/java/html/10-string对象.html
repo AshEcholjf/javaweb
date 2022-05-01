@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    //String对象的创建方式有两种
+    //方式1：var 变量名 = new String(s);
+    var str1 = new String("abc");
+    //方式2：var 变量名 = "数组";
+    var str2 = "abc";
+    var str3 = 'abc';
+
+    //属性
+    // alert(str1.length)
+    // alert(str2.length)
+    // alert(str3.length)
+
+    //函数
+    //charAt(index)：返回指定索引处的元素
+    // alert(str1.charAt(0));
+    //indexOf检索字符串
+    // String.indexOf(     searchString: string,     position?: number): number
+    // indexOf()方法返回调用String对象中第一次出现指定值的索引，从fromIndex开始搜索。如果未找到该值，则返回-1 。
+    // var number = str1.indexOf("a");
+    // alert(number);//0
+
+//    String对象还有一个函数 `trim()` ，该方法在文档中没有体现，但是所有的浏览器都支持；它是用来去掉字符串两端的空格。
+    var str4 = '  abc   ';
+    // alert(1 + str4 + 1);//1  abc   1
+    // alert(+ str4 + 1);//NaN
+    alert(1 + str4.trim() + 1)//1abc1
+    alert(+ str4.trim() + 1)//NaN
+
+
+</script>
+</body>
+</html>
