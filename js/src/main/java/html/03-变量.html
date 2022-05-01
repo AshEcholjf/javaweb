@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var test = "张三";
+    // alert(test);
+    // var test = 20;
+    // alert(test);
+
+//    * 组成字符可以是任何字母、数字、下划线（_）或美元符号（$）
+//     * 数字不能开头
+//     * 建议使用驼峰命名
+
+//    作用域：全局变量
+//     {
+//         var age = 20;
+//         var age = 30;//JavaScript 会用 30 将之前 age 变量的 20 替换掉
+//     }
+// alert(age);
+
+/*针对如上的问题，==ECMAScript 6 新增了 `let `关键字来定义变量。
+它的用法类似于 `var`，但是所声明的变量，只在 `let` 关键字所在的代码块内有效，且不允许重复声明。*/
+    {
+        let age = 20;
+        // let age = 30;IDEA直接报错，不可以重复定义
+    }
+    // alert(age);
+    //在浏览器的控制台输出，报错
+    // Uncaught ReferenceError: age is not defined
+
+    /*==ECMAScript 6 新增了 const关键字，用来声明一个只读的常量。一旦声明，常量的值就不能改变。
+     通过下面的代码看一下常用的特点就可以了*/
+    const PI = 3.14;
+    alert(PI);
+</script>
+</body>
+</html>
