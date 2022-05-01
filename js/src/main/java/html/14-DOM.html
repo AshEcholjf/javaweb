@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<img id="light" src="../imgs/off.gif"> <br>
+
+<div class="cls">传智教育</div>
+<br>
+<div class="cls">黑马程序员</div>
+<br>
+
+<input type="checkbox" name="hobby"> 电影
+<input type="checkbox" name="hobby"> 旅游
+<input type="checkbox" name="hobby"> 游戏
+<br>
+<script>
+    /*
+    `Document` 对象中提供了以下获取 `Element` 元素对象的函数
+        * `getElementById()`：根据id属性值获取，返回单个Element对象
+        * `getElementsByTagName()`：根据标签名称获取，返回Element对象数组
+        * `getElementsByName()`：根据name属性值获取，返回Element对象数组
+        * `getElementsByClassName()`：根据class属性值获取，返回Element对象数组
+*/
+
+
+    //根据 `id` 属性值获取上面的 `img` 元素对象，返回单个对象
+    var img = document.getElementById("light");
+    // alert(img);//[object HTMLImageElement]
+
+    //根据标签名称获取所有的 `div` 元素对象
+    var divs = document.getElementsByTagName("div");
+    // alert(divs.length);
+    // for (let i = 0; i < divs.length; i++) {
+    //     alert(divs[i]);//[object HTMLDivElement]
+    // }
+
+    //获取所有的满足 `name = 'hobby'` 条件的元素对象
+    var hobbys = document.getElementsByName("hobby");
+    // for (let i = 0; i < hobbys.length; i++) {
+    //     alert(hobbys[i]);//[object HTMLInputElement]
+    // }
+
+    //获取所有的满足 `class='cls'` 条件的元素对象
+    var clss = document.getElementsByClassName("cls");
+    // for (let i = 0; i <clss.length ; i++) {
+    //     alert(clss[i]);
+    // }
+
+
+
+
+</script>
+</body>
+</html>
