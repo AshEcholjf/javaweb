@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input type="button" onclick="oh()" value="what">-->
+<input type="button" id="button" value="焯">
+
+<br>
+<form id="register" action="#">
+    <input type="text" name="username">
+    <input type="submit" name="提交">
+</form>
+
+<script>
+
+    //JavaScript 提供了两种事件绑定方式：
+    // 方式一：通过 HTML标签中的事件属性进行绑定
+    //     function oh(){
+    //         alert("why");
+    //     }
+
+    //方式二：通过 DOM 元素属性绑定
+    // var byId = document.getElementById("button");
+    // byId.onclick = function (){
+    //     alert("md");
+    // }
+
+
+    /*
+    * 上面案例中使用到了 `onclick` 事件属性，那都有哪些事件属性供我们使用呢？下面就给大家列举一些比较常用的事件属性
+    *
+    * | 事件属性名  | 说明                     |
+      | ----------- | ------------------------ |
+      | onclick     | 鼠标单击事件               |
+      | onblur      | 元素失去焦点               |
+      | onfocus     | 元素获得焦点               |
+      | onload      | 某个页面或图像被完成加载     |
+      | onsubmit    | 当表单提交时触发该事件       |
+      | onmouseover | 鼠标被移到某元素之上         |
+      | onmouseout  | 鼠标从某元素移开            |
+    *
+    * */
+    //    `onsubmit  ` 表单提交事件
+    /*如上代码的表单，当我们点击 `提交` 按钮后，表单就会提交，此处默认使用的是 `GET` 提交方式，
+    会将提交的数据拼接到 URL 后。现需要通过 js 代码实现阻止表单提交的功能，js 代码实现如下：*/
+    document.getElementById("register").onsubmit = function (){
+        //onsubmit 返回true，则表单会被提交，返回false，则表单不提交
+        return false;
+    }
+</script>
+</body>
+</html>
