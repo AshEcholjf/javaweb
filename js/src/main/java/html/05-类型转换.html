@@ -8,8 +8,73 @@
 
 <script>
 
-    var flag = true;
-    alert(flag);
+
+    //其他类型转为number
+
+    //    string 转换为 number 类型：按照字符串的字面值，转为数字。如果字面值不是数字，则转为NaN
+             //将 string 转换为 number 有两种方式：
+                 //使用 + 正号运算符：
+                         // var str1 = +"abc";
+                         // alert(str1)
+                         // var str = +'20';
+                         // alert(str + 1);//21
+                 //使用 parseInt() 函数(方法)：
+                          // alert(parseInt("56") + 1);//57
+
+     //boolean 转换为 number 类型：true 转为1，false转为0
+                     //        alert(+ true);//1
+                     //        alert(- true);//-1
+                     //        alert(+false);//0
+
+
+    // alert(parseInt(undefined));//NAN
+    //     alert(parseInt(null));//NAN
+
+
+    //其他类型转为boolean
+    /*
+    * * number 类型转换为 boolean 类型：0和NaN转为false，其他的数字转为true
+        * string 类型转换为 boolean 类型：空字符串转为false，其他的字符串转为true
+        * null类型转换为 boolean 类型是 false
+        * undefined 转换为 boolean 类型是 false
+    * */
+
+    // var flag = 3;
+    // var flag = "";
+    // var flag = undefined;
+    // var flag = null;
+
+    // if (flag){
+    //     alert("转换成true");
+    // }else {
+    //     alert("转换成false");
+    // }
+
+
+/***使用场景：**
+ 在 Java 中使用字符串前，一般都会先判断字符串不是null，并且不是空字符才会做其他的一些操作，JavaScript也有类型的操作
+
+ */
+
+var  str  ='abc';
+
+//正常的健壮性判断代码
+    if (str != null && str.length > 0){
+        // 可以简化为 str.length > 0
+        alert("转化成true");
+    }else {
+        alert("转换成true")
+    }
+
+    //由js简化的代码
+    if (str){//如果str是null则转换成false，如果str是空字符串“”转换成false
+        alert("转换成true");
+    }else {
+        alert("转换成false");
+    }
+
+
+
 </script>
 </body>
 </html>
