@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //数组的定义格式有两种：
+    //方式一：var 变量名 = new Array(元素列表);
+
+    var arr1 = new Array(1, 2, 3);
+    // alert(arr1);
+    //方式二：var 变量名 = [元素列表];
+    // var arr2 = [4, 5, 6];
+    // alert(arr2)
+
+    //元素访问:访问数组中的元素和 Java 语言的一样
+    // alert(arr1[0]);
+    // alert(arr1[10]);
+    // alert(arr1);
+
+
+    //JavaScript 中的数组相当于 Java 中集合。
+    // 变长
+    // var arr3 = [1,2,3];
+    // arr3[10] = 10;
+    // alert(arr3[10]); // 10
+    // alert(arr3[9]); //undefined
+    // alert(arr3);1,2,3,,,,,,,,10
+
+    //添加其它类型的原损
+    // arr1[0] = "占山";
+    // alert(arr1);
+
+    //属性
+    // var constructor = array.constructor;
+    // alert(constructor);//function Array() { [native code] }
+    var arr = new Array(1, 2, 3);
+    //
+    // for (let i = 0; i < arr.length; i++) {
+    // alert(arr[i]);
+    // }
+
+
+
+    //方法
+    //push 函数：给数组添加元素，也就是在数组的末尾添加元素
+    //参数表示要添加的元素
+    arr.push(4);
+    alert(arr);
+    //splice 函数：删除元素
+    //参数1：索引。表示从哪个索引位置删除
+    // 参数2：个数。表示删除几个元素
+    arr.splice(0,2);//从索引为0开始删除两个
+    alert(arr);
+</script>
+</body>
+</html>
